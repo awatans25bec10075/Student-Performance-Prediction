@@ -55,15 +55,3 @@ Title: Student Performance Prediction using Linear Regression and Tkinter GUI
 * Users can easily enter input values and obtain predictions.
 * Evaluation metrics are displayed correctly.
 
----
-
-If you want, I can also prepare the following in plain text:
-
-* Abstract
-* Aim
-* Conclusion
-* Acknowledgement
-* Certificate page
-* Introduction section
-
-Tell me which one you need.
