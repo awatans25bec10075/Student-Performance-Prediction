@@ -1,4 +1,4 @@
-# Student Performance Prediction — Tkinter GUI
+# Student Performance Prediction 
 
 ## Project Overview
 A simple desktop application that predicts a student's final exam score (out of 100) using a linear regression model trained on historical student data. The model uses three input features:
