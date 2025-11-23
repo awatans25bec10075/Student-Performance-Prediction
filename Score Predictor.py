@@ -1,18 +1,9 @@
-# ==========================================
-# Student Performance Prediction - Tkinter GUI
-# ==========================================
-
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 import tkinter as tk
 from tkinter import messagebox
-
-# ---------------------------
-# 1. Load and train model
-# ---------------------------
-
 data = pd.read_csv("students.csv")
 
 X = data[["hours_studied", "attendance", "previous_score"]]
@@ -30,10 +21,6 @@ y_pred = model.predict(X_test)
 mse = mean_squared_error(y_test, y_pred)
 r2 = r2_score(y_test, y_pred)
 
-
-# ---------------------------
-# 2. GUI Function
-# ---------------------------
 
 def predict_score():
     try:
@@ -64,10 +51,6 @@ def predict_score():
         messagebox.showerror("Input Error", "Please enter valid numeric values.")
 
 
-# ---------------------------
-# 3. Build Tkinter GUI
-# ---------------------------
-
 root = tk.Tk()
 root.title("Student Performance Prediction")
 root.geometry("400x400")
@@ -77,36 +60,31 @@ title_label = tk.Label(root, text="Student Performance Predictor",
                        font=("Arial", 16, "bold"), bg="#eef2f3")
 title_label.pack(pady=10)
 
-# Hours studied
 tk.Label(root, text="Hours Studied per Day:", bg="#eef2f3").pack()
 hours_entry = tk.Entry(root)
 hours_entry.pack(pady=5)
 
-# Attendance
 tk.Label(root, text="Attendance (%) :", bg="#eef2f3").pack()
 attendance_entry = tk.Entry(root)
 attendance_entry.pack(pady=5)
 
-# Previous score
 tk.Label(root, text="Previous Exam Score:", bg="#eef2f3").pack()
 previous_entry = tk.Entry(root)
 previous_entry.pack(pady=5)
 
-# Predict button
 predict_btn = tk.Button(root, text="Predict Final Score", command=predict_score,
                         bg="#4CAF50", fg="white", font=("Arial", 12))
 predict_btn.pack(pady=15)
 
-# Output labels
 result_label = tk.Label(root, text="", font=("Arial", 14, "bold"), bg="#eef2f3")
 result_label.pack(pady=5)
 
 comment_label = tk.Label(root, text="", font=("Arial", 12), bg="#eef2f3")
 comment_label.pack(pady=5)
 
-# Show evaluation metrics
 metrics = f"MSE: {mse:.2f} | R²: {r2:.2f}"
 metrics_label = tk.Label(root, text=metrics, bg="#eef2f3", fg="gray")
 metrics_label.pack(side="bottom", pady=10)
 
 root.mainloop()
+
