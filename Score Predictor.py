@@ -35,7 +35,7 @@ def predict_score():
 
         result_label.config(text=f"Predicted Final Score: {predicted:.2f} / 100")
 
-        # Interpretation
+
         if predicted >= 75:
             comment = "Very good performance expected."
         elif predicted >= 60:
@@ -87,4 +87,5 @@ metrics_label = tk.Label(root, text=metrics, bg="#eef2f3", fg="gray")
 metrics_label.pack(side="bottom", pady=10)
 
 root.mainloop()
+
 
